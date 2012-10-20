@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.iocanto.plugin.PulldownHandler"
+            id="referenceToMenuId"
+            name="referenceToMenuId">
+      </command>
+   </extension>
+   <extension point="org.eclipse.ui.menus">
+     <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+        <toolbar id="rapide-web-browser.dropdown.toolbar">
+           <command id="z.ex.dropdown.toolbar.command" commandId="referenceToMenuId" 
+           			style="pulldown"
+           			label="Browser Switcher"
+           			tooltip="Change Web Browser"
+           			icon="icons/webbrowser.png">
+           </command>
+        </toolbar>
+     </menuContribution>
+     <menuContribution
+       locationURI="menu:z.ex.dropdown.toolbar.command"
+       allPopups="false">
+	    <dynamic
+	         class="com.iocanto.plugin.BrowserMenuItems"
+	         id="com.iocanto.plugin.BrowserMenuItems">
+	  </dynamic>
+     </menuContribution>
+  </extension>    
+</plugin>

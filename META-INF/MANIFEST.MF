@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Web Browser Switch
+Bundle-SymbolicName: com.iocanto.rapideWebBrowserSwitcher;singleton:=true
+Bundle-Version: 1.0.1
+Bundle-Vendor: iocanto
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.5.0",
+ org.eclipse.ui;bundle-version="3.5.2",
+ org.eclipse.ui.ide;bundle-version="3.5.2",
+ org.eclipse.ui.browser;bundle-version="3.2.301"
+Bundle-Activator: com.iocanto.plugin.RapideBrowserSwitcherPlugin
+Import-Package: org.eclipse.core.expressions
