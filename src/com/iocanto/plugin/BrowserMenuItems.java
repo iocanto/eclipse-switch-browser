@@ -29,7 +29,6 @@ public class BrowserMenuItems extends ContributionItem {
 		
 	}
 	
-	
 	class BroweritemSelectionAdapter extends  SelectionAdapter {
 		
 		IBrowserDescriptor descriptor ;

@@ -4,6 +4,8 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
+import com.iocanto.plugin.browser.BrowserManager;
+
 
 public class RapideBrowserSwitcherPlugin extends AbstractUIPlugin {
 
@@ -35,6 +37,7 @@ public class RapideBrowserSwitcherPlugin extends AbstractUIPlugin {
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
+		BrowserManager.safeDispose();
 	}
 
 	/**
