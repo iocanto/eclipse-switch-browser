@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Web Browser Switch
-Bundle-SymbolicName: com.iocanto.rapideWebBrowserSwitcher;singleton:=true
-Bundle-Version: 1.2.0
+Bundle-SymbolicName: com.iocanto.rapidewebbrowserswitcher;singleton:=true
+Bundle-Version: 1.0.2
 Bundle-Vendor: iocanto
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.5.0",
