@@ -13,6 +13,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.IPreferenceChangeListener;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences.PreferenceChangeEvent;
+import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.ui.IMemento;
 import org.eclipse.ui.XMLMemento;
@@ -60,8 +61,7 @@ public class BrowserManager extends Observable {
 			}
         };
         
-		@SuppressWarnings("deprecation")
-		InstanceScope instanceScope = new InstanceScope();
+		IScopeContext instanceScope = InstanceScope.INSTANCE;
 		IEclipsePreferences prefs = instanceScope.getNode(WebBrowserUIPlugin.PLUGIN_ID);
 		prefs.addPreferenceChangeListener(pcl);
         loadBrowsers();
@@ -152,8 +152,7 @@ public class BrowserManager extends Observable {
 	}
 
 	protected void dispose() {
-	        @SuppressWarnings("deprecation")
-			InstanceScope instanceScope = new InstanceScope();
+			IScopeContext instanceScope = InstanceScope.INSTANCE;
 	        IEclipsePreferences prefs = instanceScope.getNode(WebBrowserUIPlugin.PLUGIN_ID);
 	        prefs.removePreferenceChangeListener(pcl);
 	}

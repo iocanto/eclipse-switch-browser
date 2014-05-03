@@ -20,20 +20,20 @@ public class BrowserMenuItems extends ContributionItem {
 		manager = BrowserManager.getInstance(); 
 		
 		for ( IBrowserDescriptor browser : manager.getBrowers() ){
-			MenuItem menuItem = new MenuItem(menu, SWT.CHECK);
+			MenuItem menuItem = new MenuItem(menu, SWT.RADIO);
 			if ( browser.isCurrent() ) 
 				menuItem.setSelection(true);
 			menuItem.setText( browser.getName() );
-			menuItem.addSelectionListener(new BroweritemSelectionAdapter ( browser )) ;
+			menuItem.addSelectionListener(new BrowerItemSelectionAdapter ( browser )) ;
 		}
 		
 	}
 	
-	class BroweritemSelectionAdapter extends  SelectionAdapter {
+	class BrowerItemSelectionAdapter extends  SelectionAdapter {
 		
 		IBrowserDescriptor descriptor ;
 		
-		BroweritemSelectionAdapter ( IBrowserDescriptor descriptor ){
+		BrowerItemSelectionAdapter ( IBrowserDescriptor descriptor ){
 			this.descriptor  = descriptor ;
 			
 		} 
